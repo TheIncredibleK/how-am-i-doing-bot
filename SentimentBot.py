@@ -48,7 +48,7 @@ def __get_list_of_users_tweets(user):
 
 def __tweet_user_results(tweet_id, filepath, username):
     print("Sending out media tweet")
-    message = "@{} Here's your results! Remember that I'm not an expert, I'm a shitty piece of code written by an idiot.".format(username)
+    message = "@{} Here's your results! Remember that I'm not an expert, I'm a shitty piece of code written by an idiot. If you don't understand the graph, see my pinned tweet".format(username)
     API.update_with_media(filename=filepath, status=message, in_reply_to_status_id=tweet_id)
 
 
