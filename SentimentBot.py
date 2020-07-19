@@ -124,16 +124,13 @@ def analyse_list_of_text(text):
     data_as_df.index.name = "Date"
     return data_as_df
 
-def keep_bot_going():
-    myStream = tweepy.Stream(auth=API.auth, listener=StreamListener())
-    print("ONLINE: ")
-    myStream.filter(track=['@{} '.format(MY_NAME)])
-
 def main_loop():
     while True:
         a = 1
     return
 
 if __name__ == "__main__":
-    keep_bot_going()
+    myStream = tweepy.Stream(auth=API.auth, listener=StreamListener())
+    print("ONLINE: ")
+    myStream.filter(track=['@{} '.format(MY_NAME)])
     main_loop()
