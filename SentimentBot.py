@@ -128,9 +128,12 @@ def keep_bot_going():
     myStream = tweepy.Stream(auth=API.auth, listener=StreamListener())
     print("ONLINE: ")
     myStream.filter(track=['@{} '.format(MY_NAME)])
+
+def main_loop():
     while True:
         a = 1
     return
 
 if __name__ == "__main__":
     keep_bot_going()
+    main_loop()
