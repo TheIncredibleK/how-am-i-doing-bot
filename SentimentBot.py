@@ -133,4 +133,4 @@ if __name__ == "__main__":
     myStream = tweepy.Stream(auth=API.auth, listener=StreamListener())
     print("ONLINE: ")
     myStream.filter(track=['@{} '.format(MY_NAME)])
-    main_loop()
+    #main_loop()
