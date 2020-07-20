@@ -130,7 +130,8 @@ def main_loop():
     return
 
 if __name__ == "__main__":
+    streamListener = StreamListener()
     myStream = tweepy.Stream(auth=API.auth, listener=StreamListener())
     print("ONLINE: ")
     myStream.filter(track=['@{} '.format(MY_NAME)])
-    #main_loop()
+    main_loop()
