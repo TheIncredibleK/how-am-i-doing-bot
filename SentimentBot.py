@@ -101,16 +101,19 @@ def __clean_up(filepath):
         os.rmdir(path)
 
 def process_tweet(tweet):
-    username = tweet.author.screen_name
-    if(username != MY_NAME):
-        print("Processing tweet for {}".format(username))
-        user_data = __process_users_tweets(username)
-        filepath = __save_figure_to_named_directory(user_data, username)
-        __tweet_user_results(tweet.id, filepath, username)
-        __clean_up(filepath)
-        print("Finished tweeting to {}".format(username))
-    else:
-        print("Not doing it for myself dingus")
+    try:
+        username = tweet.author.screen_name
+        if(username != MY_NAME):
+            print("Processing tweet for {}".format(username))
+            user_data = __process_users_tweets(username)
+            filepath = __save_figure_to_named_directory(user_data, username)
+            __tweet_user_results(tweet.id, filepath, username)
+            __clean_up(filepath)
+            print("Finished tweeting to {}".format(username))
+        else:
+            print("Not doing it for myself dingus")
+    except:
+        print("Cannot process this tweet from {}".format(tweet.author))
 
 
 ## Main Event Loop ###
